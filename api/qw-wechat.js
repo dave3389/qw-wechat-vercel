@@ -170,9 +170,8 @@ module.exports = async function (request, response) {
       FromUserName,
       ToUserName,
       timeNow,
-      '微信规定要在5s内回复，但是本次需要回复的内容很长，现在还没整理好，所以你暂时看到了这条消息。请稍后回复任意文字尝试获取回复。比如数字 1。'
+      'success'
     ));
-    return;
   }
   if (userStashMsg[FromUserName]) {
     console.log('用户有暂存数据，返回暂存数据');
@@ -274,7 +273,7 @@ module.exports = async function (request, response) {
         isResolved = true;
         userHasAnswerIng[FromUserName] = true;
         console.log('执行超过4s，提前返回');
-        answer = '微信规定要在5s内回复，但是我正在思考中，所以你暂时看到了这条消息。请稍后回复任意文字尝试获取回复。比如数字 1。'
+        answer = 'success'
         resolve(answer);
       }, 4000);
     });
