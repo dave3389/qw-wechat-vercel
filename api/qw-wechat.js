@@ -170,7 +170,7 @@ module.exports = async function (request, response) {
       FromUserName,
       ToUserName,
       timeNow,
-      'success'
+      ''
     ));
   }
   if (userStashMsg[FromUserName]) {
@@ -273,7 +273,7 @@ module.exports = async function (request, response) {
         isResolved = true;
         userHasAnswerIng[FromUserName] = true;
         console.log('执行超过4s，提前返回');
-        answer = 'success'
+        answer = ''
         resolve(answer);
       }, 4000);
     });
